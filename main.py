@@ -36,4 +36,4 @@ def expenses():
                            by_title=expenses_by_title)
 
 
-app.run()
+app.run(debug=True)

@@ -14,6 +14,8 @@
   </head>
   <body>
     <main>
+      <div class="bg"></div>
+
       <nav>
         <span class="logo">CovidExpenseTracker</span>
 
@@ -22,51 +24,55 @@
           <a href="/expenses">Expenses</a>
         </div>
       </nav>
-      <div class="card">
-        <div class="heading">Create a new expense</div>
-        <form action="/create" method="post" class="create-form">
-          <label for="name">
-            Name <br />
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter your name"
-              required
-            />
-          </label>
-          <label for="title">
-            Title <br />
-            <input
-              type="text"
-              name="title"
-              id="title"
-              placeholder="Enter title of this expense"
-              required
-            />
-          </label>
-          <label for="expense">
-            Expense <br />
-            <input
-              type="number"
-              name="expense"
-              id="expense"
-              placeholder="Enter the expense"
-              required
-            />
-          </label>
-          <label for="date">
-            Date <br />
-            <input
-              type="date"
-              name="date"
-              id="date"
-              placeholder="Please select a date"
-              required
-            />
-          </label>
-          <button class="btn" style="margin-top: 2em">Submit</button>
-        </form>
+      <div class="card-container">
+        <div class="card" style="padding: 3em">
+          <div class="heading" style="margin: 0px 0px 3rem">
+            Create a new expense
+          </div>
+          <form action="/create" method="post" class="create-form">
+            <label for="name">
+              Name <br />
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                required
+              />
+            </label>
+            <label for="title">
+              Title <br />
+              <input
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Enter title of this expense"
+                required
+              />
+            </label>
+            <label for="expense">
+              Expense <br />
+              <input
+                type="number"
+                name="expense"
+                id="expense"
+                placeholder="Enter the expense"
+                required
+              />
+            </label>
+            <label for="date">
+              Date <br />
+              <input
+                type="date"
+                name="date"
+                id="date"
+                placeholder="Please select a date"
+                required
+              />
+            </label>
+            <button class="btn" style="margin-top: 2em">Submit</button>
+          </form>
+        </div>
       </div>
     </main>
   </body>
