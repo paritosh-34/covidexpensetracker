@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Covid Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <span class="logo">CovidExpenseTracker</span>
+
+        <div class="links">
+          <a href="/create">Create</a>
+          <a href="/expenses">Expenses</a>
+        </div>
+      </nav>
+      <div class="card">
+        <div class="heading">Create a new expense</div>
+        <form action="/create" method="post" class="create-form">
+          <label for="name">
+            Name <br />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              required
+            />
+          </label>
+          <label for="title">
+            Title <br />
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Enter title of this expense"
+              required
+            />
+          </label>
+          <label for="expense">
+            Expense <br />
+            <input
+              type="number"
+              name="expense"
+              id="expense"
+              placeholder="Enter the expense"
+              required
+            />
+          </label>
+          <label for="date">
+            Date <br />
+            <input
+              type="date"
+              name="date"
+              id="date"
+              placeholder="Please select a date"
+              required
+            />
+          </label>
+          <button class="btn" style="margin-top: 2em">Submit</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
