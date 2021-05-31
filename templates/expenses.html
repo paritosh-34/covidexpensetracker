@@ -22,77 +22,83 @@
       </div>
     </nav>
     <div class="container">
-      <div class="heading" style="margin-top: 2rem">All Expenses</div>
-      <div class="inner-container">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Expense</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for expense in expenses %}
-            <tr>
-              <td>{{ expense[0] }}</td>
-              <td>{{ expense[1] }}</td>
-              <td>{{ expense[3] }}</td>
-              <td>{{ expense[2] }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        <div class="total">Total = <b>{{total}}</b></div>
+      <div class="animate1">
+        <div class="heading" style="margin-top: 2rem">All Expenses</div>
+        <div class="inner-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Expense</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for expense in expenses %}
+              <tr>
+                <td>{{ expense[0] }}</td>
+                <td>{{ expense[1] }}</td>
+                <td>{{ expense[3] }}</td>
+                <td>{{ expense[2] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <div class="total">Total = <b>{{total}}</b></div>
+        </div>
       </div>
 
-      <div class="heading">Expenses per user</div>
-      <div class="inner-container">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Total Expense</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for expense in by_user %}
-            <tr>
-              <td>{{ expense[0] }}</td>
-              <td>{{ expense[1] }}</td>
-              <td>{{ expense[2] }}</td>
-              <td>{{ expense[3] }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+      <div class="animate2">
+        <div class="heading">Expenses per user</div>
+        <div class="inner-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Total Expense</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for expense in by_user %}
+              <tr>
+                <td>{{ expense[0] }}</td>
+                <td>{{ expense[1] }}</td>
+                <td>{{ expense[2] }}</td>
+                <td>{{ expense[3] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="heading">Expenses per title</div>
-      <div class="inner-container">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Title</th>
-              <th>Date</th>
-              <th>Total Expense</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for expense in by_title %}
-            <tr>
-              <td>{{ expense[0] }}</td>
-              <td>{{ expense[1] }}</td>
-              <td>{{ expense[2] }}</td>
-              <td>{{ expense[3] }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+      <div class="animate3">
+        <div class="heading">Expenses per title</div>
+        <div class="inner-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Total Expense</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for expense in by_title %}
+              <tr>
+                <td>{{ expense[0] }}</td>
+                <td>{{ expense[1] }}</td>
+                <td>{{ expense[2] }}</td>
+                <td>{{ expense[3] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>
