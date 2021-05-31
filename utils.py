@@ -40,8 +40,6 @@ def view_expense():
     rows = curr.fetchall()
     curr.execute(total)
     amount = curr.fetchall()[0]
-    print(rows)
-    print(amount[0])
 
     return rows, amount[0]
 
