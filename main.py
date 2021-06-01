@@ -36,4 +36,11 @@ def expenses():
                            by_title=expenses_by_title)
 
 
-app.run()
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return redirect("/create")
+    return render_template("login.html")
+
+
+app.run(debug=True)
