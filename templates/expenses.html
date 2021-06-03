@@ -21,6 +21,7 @@
       <div class="links">
         <a href="/create">Create</a>
         <a href="/expenses">Expenses</a>
+        <a href="/logout">Logout</a>
       </div>
     </nav>
     <div class="container">
@@ -31,6 +32,7 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>State</th>
                 <th>Title</th>
                 <th>Date</th>
                 <th>Expense</th>
@@ -40,6 +42,7 @@
               {% for expense in expenses %}
               <tr>
                 <td>{{ expense[0] }}</td>
+                <td>{{ expense[4] }}</td>
                 <td>{{ expense[1] }}</td>
                 <td>{{ expense[3] }}</td>
                 <td>{{ expense[2] }}</td>
@@ -58,8 +61,6 @@
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Title</th>
-                <th>Date</th>
                 <th>Total Expense</th>
               </tr>
             </thead>
@@ -68,8 +69,6 @@
               <tr>
                 <td>{{ expense[0] }}</td>
                 <td>{{ expense[1] }}</td>
-                <td>{{ expense[2] }}</td>
-                <td>{{ expense[3] }}</td>
               </tr>
               {% endfor %}
             </tbody>
@@ -83,9 +82,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Name</th>
                 <th>Title</th>
-                <th>Date</th>
                 <th>Total Expense</th>
               </tr>
             </thead>
@@ -94,8 +91,28 @@
               <tr>
                 <td>{{ expense[0] }}</td>
                 <td>{{ expense[1] }}</td>
-                <td>{{ expense[2] }}</td>
-                <td>{{ expense[3] }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="animate3 card">
+        <div class="heading">Expenses per state</div>
+        <div class="inner-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Total Expense</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for expense in by_state %}
+              <tr>
+                <td>{{ expense[0] }}</td>
+                <td>{{ expense[1] }}</td>
               </tr>
               {% endfor %}
             </tbody>

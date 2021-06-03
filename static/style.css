@@ -35,6 +35,12 @@ main {
 
 input {
   padding: 0.5em;
+  width: 100%;
+}
+
+select {
+  width: 100%;
+  padding: 0.5em;
 }
 
 .btn {
