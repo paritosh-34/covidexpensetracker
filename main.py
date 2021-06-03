@@ -8,7 +8,7 @@ init()
 
 @app.route("/", methods=['GET'])
 def home():
-    return redirect("/create")
+    return redirect("/login")
 
 
 @app.route("/create", methods=['GET', 'POST'])
