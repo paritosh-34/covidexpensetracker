@@ -30,7 +30,13 @@
           <div class="heading" style="margin: 0px 0px 3rem">
             Create a new expense
           </div>
-          <form action="/create" method="post" class="create-form">
+          <form
+            action="/create"
+            method="post"
+            class="create-form"
+            enctype="multipart/form-data"
+            onsubmit="return onSubmit(event)"
+          >
             <label for="name">
               Name <br />
               <input
@@ -43,12 +49,54 @@
             </label>
             <label for="state">
               State <br />
-              <select name="state" id="state">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
+              <input
+                type="text"
+                name="state"
+                id="state"
+                placeholder="Enter your State"
+                required
+                list="statelist"
+              />
+              <datalist id="statelist">
+                <option value="Andaman and Nicobar Islands"></option>
+                <option value="Andhra Pradesh"></option>
+                <option value="Arunachal Pradesh"></option>
+                <option value="Assam"></option>
+                <option value="Bihar"></option>
+                <option value="Chandigarh"></option>
+                <option value="Chhattisgarh"></option>
+                <option
+                  value="Dadra and Nagar Haveli and Daman and Diu"
+                ></option>
+                <option value="Delhi"></option>
+                <option value="Goa"></option>
+                <option value="Gujarat"></option>
+                <option value="Haryana"></option>
+                <option value="Himachal Pradesh"></option>
+                <option value="Jammu and Kashmir"></option>
+                <option value="Jharkhand"></option>
+                <option value="Karnataka"></option>
+                <option value="Kerala"></option>
+                <option value="Ladakh"></option>
+                <option value="Lakshadweep"></option>
+                <option value="Madhya Pradesh"></option>
+                <option value="Maharashtra"></option>
+                <option value="Manipur"></option>
+                <option value="Meghalaya"></option>
+                <option value="Mizoram"></option>
+                <option value="Nagaland"></option>
+                <option value="Odisha"></option>
+                <option value="Puducherry"></option>
+                <option value="Punjab"></option>
+                <option value="Rajasthan"></option>
+                <option value="Sikkim"></option>
+                <option value="Tamil Nadu"></option>
+                <option value="Telangana"></option>
+                <option value="Tripura"></option>
+                <option value="Uttar Pradesh"></option>
+                <option value="Uttarakhand"></option>
+                <option value="West Bengal"></option>
+              </datalist>
             </label>
             <label for="title">
               Title <br />
@@ -58,7 +106,12 @@
                 id="title"
                 placeholder="Enter title of this expense"
                 required
+                list="titlelist"
               />
+              <datalist id="titlelist">
+                <option value="Boston"></option>
+                <option value="Cambridge"></option>
+              </datalist>
             </label>
             <label for="expense">
               Expense <br />
@@ -80,10 +133,26 @@
                 required
               />
             </label>
+            <label for="image" class="custom-file-upload">
+              Upload Image <br />
+              <input
+                type="file"
+                name="image"
+                id="image"
+                placeholder="Please select a image"
+                required
+              />
+            </label>
             <button class="btn" style="margin-top: 2em">Submit</button>
           </form>
         </div>
       </div>
     </main>
+
+    <script>
+      function onSubmit(event) {
+        return confirm("Confirm your Details");
+      }
+    </script>
   </body>
 </html>

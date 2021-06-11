@@ -63,7 +63,13 @@ select {
 ------------ */
 
 nav {
-  background-color: black;
+  background: rgb(70, 140, 113);
+  background: linear-gradient(
+    90deg,
+    rgba(70, 140, 113, 1) 12%,
+    rgba(207, 15, 15, 0.7063200280112045) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
   color: white;
   width: 100%;
 

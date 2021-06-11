@@ -1,7 +1,16 @@
 from flask import Flask, render_template, redirect, request
+from werkzeug.utils import secure_filename
 from utils import *
+from pathlib import Path
+import os
+
+Path("./uploads/").mkdir(exist_ok=True)
+
+UPLOAD_FOLDER = 'uploads'
 
 app = Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 init()
 
@@ -21,6 +30,10 @@ def create():
     expense = request.form["expense"]
     date = request.form["date"]
     state = request.form["state"]
+
+    f = request.files['image']
+    f.save((os.path.join(
+        app.config['UPLOAD_FOLDER'], secure_filename(f.filename))))
 
     submit_expense(name, title, expense, date, state)
 
