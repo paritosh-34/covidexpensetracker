@@ -25,19 +25,20 @@ def create():
     if request.method == 'GET':
         return render_template("create.html")
 
-    name = request.form["name"]
-    title = request.form["title"]
-    expense = request.form["expense"]
-    date = request.form["date"]
-    state = request.form["state"]
+    if request.method == 'POST':
+        name = request.form["name"]
+        title = request.form["title"]
+        expense = request.form["expense"]
+        date = request.form["date"]
+        state = request.form["state"]
 
-    f = request.files['image']
-    f.save((os.path.join(
-        app.config['UPLOAD_FOLDER'], secure_filename(f.filename))))
+        f = request.files['image']
+        f.save((os.path.join(
+            app.config['UPLOAD_FOLDER'], secure_filename(f.filename))))
 
-    submit_expense(name, title, expense, date, state)
+        submit_expense(name, title, expense, date, state)
 
-    return redirect("/expenses")
+        return redirect("/expenses")
 
 
 @app.route("/expenses", methods=["GET"])
@@ -55,6 +56,7 @@ def expenses():
 def login():
     if request.method == 'POST':
         return redirect("/create")
+
     return render_template("login.html")
 
 
